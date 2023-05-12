@@ -6,6 +6,7 @@ class CreateClimbs < ActiveRecord::Migration[7.0]
       t.boolean :trad
       t.boolean :sport
       t.integer :number_bolts
+      # t.integer :route_length
 
       t.timestamps
     end
