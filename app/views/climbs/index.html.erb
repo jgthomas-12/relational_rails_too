@@ -1,0 +1,10 @@
+<h1>CLIMBS</h1>
+
+<% @climbs.each do |climb| %>
+  <p><h3><%= climb.name %></h3></p>
+  <p><%= climb.grade %></p>
+  <p> Trad: <%= climb.trad %></p>
+  <p> Sport: <%= climb.sport %></p>
+  <p> Number_of_Bolts: <%= climb.number_bolts %></p>
+<% end %>
+
