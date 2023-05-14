@@ -81,7 +81,7 @@ ActiveRecord
 
 --
 
-[ ] done
+[/areas ] done
 
 User Story 6, Parent Index sorted by Most Recently Created
 
@@ -89,7 +89,8 @@ As a visitor
 When I visit the parent index,
 I see that records are ordered by most recently created first
 And next to each of the records I see when it was created
-[ ] done
+
+[/areas/:area_id ] done
 
 User Story 7, Parent Child Count
 
@@ -97,13 +98,15 @@ As a visitor
 When I visit a parent's show page
 I see a count of the number of children associated with this parent
 Usability
-[ ] done
+
+[/areas, /areas/:id, /climbs/:id, /areas/:area_id/climbs ] done
 
 User Story 8, Child Index Link
 
 As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Child Index
+
 [ ] done
 
 User Story 9, Parent Index Link
