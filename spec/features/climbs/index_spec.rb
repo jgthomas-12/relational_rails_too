@@ -11,6 +11,7 @@ RSpec.describe "/climbs", type: :feature do
     let!(:high_wire) { Area.create!(name: "High Wire", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 16) }
     # @high_wire = Area.create!(name: "High Wire", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 16)
     let!(:deuces_wild) { Climb.create!(name: "Deuces Wild", grade: "5.10a", trad: false, sport: true, number_bolts: 7, area_id: high_wire.id)}
+    
     it 'displays all the climbs attributes' do
       visit "/climbs"
       expect(page).to have_content(deuces_wild.name)

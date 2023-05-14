@@ -8,3 +8,4 @@ class AreasController < ApplicationController
   end
 
 end
+

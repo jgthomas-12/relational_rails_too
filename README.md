@@ -69,7 +69,7 @@ Then I see the child with that id including the child's attributes
 
 --
 
-[ ] done
+[/areas/:area_id/climbs ] done
 
 User Story 5, Parent Children Index
 
@@ -78,6 +78,9 @@ When I visit '/parents/:parent_id/child_table_name'
 Then I see each Child that is associated with that Parent with each Child's attributes
 (data from each column that is on the child table)
 ActiveRecord
+
+--
+
 [ ] done
 
 User Story 6, Parent Index sorted by Most Recently Created
@@ -118,6 +121,8 @@ Then I see a link to take me to that parent's `child_table_name` page ('/parents
 Iteration 2
 CRUD
 [ ] done
+
+ITERRATION 2
 
 User Story 11, Parent Creation
 
@@ -202,6 +207,8 @@ I should be taken to that parent's edit page where I can update its information 
 [ ] done
 
 User Story 18, Child Update From Childs Index Page
+
+ITERATION 3
 
 As a visitor
 When I visit the `child_table_name` index page or a parent `child_table_name` index page

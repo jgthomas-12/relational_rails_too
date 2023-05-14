@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "the climbs show page" do
+RSpec.describe "the climbs show page", type: :feature do
   # As a visitor
   # When I visit '/child_table_name/:id'
   # Then I see the child with that id including the child's attributes
@@ -12,13 +12,22 @@ RSpec.describe "the climbs show page" do
     it "displays the climb name, id, and attributes" do
       visit "/climbs/#{deuces_wild.id}"
       expect(page).to have_content(deuces_wild.name)
-      expect(page).to have_content(deuces_wild.id)
-      expect(page).to have_content(deuces_wild.grade)
-      expect(page).to have_content(deuces_wild.trad)
-      expect(page).to have_content(deuces_wild.sport)
-      expect(page).to have_content(deuces_wild.number_bolts)
-      expect(page).to have_content(deuces_wild.area_id) # name?
+      expect(page).to have_content("Climb ID: #{deuces_wild.id}")
+      expect(page).to have_content("Grade: #{deuces_wild.grade}")
+      expect(page).to have_content("Trad: #{deuces_wild.trad}")
+      expect(page).to have_content("Sport: #{deuces_wild.sport}")
+      expect(page).to have_content("Number of Bolts: #{deuces_wild.number_bolts}")
+      expect(page).to have_content("Area ID Number: #{deuces_wild.area_id}") # name?
       save_and_open_page
+
+      # make another climb and test it
+      # expect(page).to have_content(deuces_wild.name)
+      # expect(page).to have_content(deuces_wild.id)
+      # expect(page).to have_content(deuces_wild.grade)
+      # expect(page).to have_content(deuces_wild.trad)
+      # expect(page).to have_content(deuces_wild.sport)
+      # expect(page).to have_content(deuces_wild.number_bolts)
+      # expect(page).to have_content(deuces_wild.area_id) # name?
     end
 
   end

@@ -9,6 +9,7 @@ RSpec.describe "/areas", type: :feature do
   describe "as a visitor, when I visit the area index page" do
     let!(:canal_zone) { Area.create!(name: "Canal Zone", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 70) }
     let!(:high_wire) { Area.create!(name: "High Wire", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 16) }
+    
     it "displays all the area names" do
       # canal_zone = Area.create(name: "Canal Zone", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 70)
 
