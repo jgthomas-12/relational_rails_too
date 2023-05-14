@@ -1,3 +1,4 @@
+<%= link_to "Go To Climbs Index", "/climbs" %>
 <h2> <%= @area.name %> </h2>
 
 <p> Area ID Numbah: <%= @area.id %></p>
@@ -6,4 +7,5 @@
 <p> Trad: <%= @area.trad %></p>
 <p> Sport: <%= @area.sport %></p>
 <p> Parking Spaces: <%= @area.parking_spaces %></p>
+<p> Number of Climbs: <%= @area.climbs.count %></p>
 
