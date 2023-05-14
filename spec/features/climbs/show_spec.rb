@@ -39,7 +39,18 @@ RSpec.describe "the climbs show page", type: :feature do
       expect(page).to have_content("Sport: #{@peoples_choice.sport}")
       expect(page).to have_content("Number of Bolts: #{@peoples_choice.number_bolts}")
       expect(page).to have_content("Area ID Number: #{@peoples_choice.area_id}") # name?
+    end
 
+    it 'links to climbs index page no mattah the cloimb' do
+      visit "/climbs/#{@peoples_choice.id}"
+      expect(page).to have_content("Back To Climbs Index")
+      click_on "Back To Climbs Index"
+      expect(current_path).to eq("/climbs")
+
+      visit "/climbs/#{@deuces_wild.id}"
+      expect(page).to have_content("Back To Climbs Index")
+      click_on "Back To Climbs Index"
+      expect(current_path).to eq("/climbs")
     end
 
     # it 'displays the climb grade' do
