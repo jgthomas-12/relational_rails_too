@@ -103,7 +103,7 @@ def test_data
   @route_canal = Climb.create!(name: "Route Canal", grade: "5.8+", trad: true, sport: false, number_bolts: 1, area_id: @canal_zone.id )
 
   @deuces_wild = Climb.create!(name: "Deuces Wild", grade: "5.10a", trad: false, sport: true, number_bolts: 7, area_id: @high_wire.id)
-  @peoples_choice = Climb.create!(name: "People's Choide", grade: "5.10d", trad: false, sport: true, number_bolts: 20, area_id: @high_wire.id)
+  @peoples_choice = Climb.create!(name: "People's Choice", grade: "5.10d", trad: false, sport: true, number_bolts: 20, area_id: @high_wire.id)
 
   @the_stand = Climb.create!(name: "The Stand", grade: "5.10b/c", trad: false, sport: true, number_bolts: 7, area_id: @cactus_cliff.id)
   @century_man = Climb.create!(name: "20th Century Man", grade: "5.10a/b", trad: false, sport: true, number_bolts: 7, area_id: @cactus_cliff.id)

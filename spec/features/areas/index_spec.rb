@@ -6,17 +6,21 @@ RSpec.describe "/areas", type: :feature do
 # As a visitor
 # When I visit '/areas'
 # Then I see the name of each area record in the system
-  describe "as a visitor, when I visit the area index page" do
-    let!(:canal_zone) { Area.create!(name: "Canal Zone", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 70) }
-    let!(:high_wire) { Area.create!(name: "High Wire", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 16) }
-    
-    it "displays all the area names" do
-      # canal_zone = Area.create(name: "Canal Zone", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 70)
 
+  before(:each) do
+    @canal_zone = Area.create!(name: "Canal Zone", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 70)
+    @high_wire = Area.create!(name: "High Wire", town: "Golden", camping: false, trad: true, sport: true, parking_spaces: 16)
+    @cactus_cliff = Area.create!(name: "Cactus Cliff", town: "Canyon City, CO", camping: true, trad: true, sport: true, parking_spaces: 0)
+
+  end
+
+  describe "as a visitor, when I visit the area index page" do
+
+    it "displays all the area names" do
       visit "/areas"
-      # save_and_open_page
-      expect(page).to have_content(canal_zone.name)
-      expect(page).to have_content(high_wire.name)
+      expect(page).to have_content(@canal_zone.name)
+      expect(page).to have_content(@high_wire.name)
+      expect(page).to have_content(@cactus_cliff.name)
     end
   end
 end
