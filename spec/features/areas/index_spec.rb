@@ -49,6 +49,13 @@ RSpec.describe "/areas", type: :feature do
                             "#{@canal_zone.name} Created At: #{@canal_zone.created_at}",
                             "#{@cactus_cliff.name} Created At: #{@cactus_cliff.created_at}"])
     end
+
+    it 'links to climbs index page' do
+      visit "/areas"
+      expect(page).to have_content("Go To Climbs Index")
+      click_on "Go To Climbs Index"
+      expect(current_path).to eq("/climbs")
+    end
   end
 end
 
