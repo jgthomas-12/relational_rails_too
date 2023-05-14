@@ -1,1 +1,7 @@
-<% require 'pry'; binding.pry %>
+<% @climbs.each do |climb| %>
+  <h4><%= climb.name %></h4>
+  <p>Grade: <%= climb.grade %></p>
+  <p>Trad: <%= climb.trad %></p>
+  <p>Sport: <%= climb.sport %></p>
+  <p>Number of Bolts: <%= climb.number_bolts %></p>
+<% end %>
