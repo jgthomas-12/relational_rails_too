@@ -54,16 +54,15 @@ RSpec.describe "the area show page", type: :feature do
     it 'displays a count of the number of children associated with the parent' do
       visit "/areas/#{@high_wire.id}"
       expect(page).to have_content("Number of Climbs: #{@high_wire.climbs.count}")
-      # save_and_open_page
 
       visit "/areas/#{@canal_zone.id}"
       expect(page).to have_content("Number of Climbs: #{@canal_zone.climbs.count}")
-      # save_and_open_page
     end
+
+    # user story 8: the legend of climbs index links
 
     it 'links to climbs index from any show page' do
       visit "/areas/#{@high_wire.id}"
-      save_and_open_page
       expect(page).to have_content("Go To Climbs Index")
       click_on "Go To Climbs Index"
       expect(current_path).to eq("/climbs")
@@ -73,6 +72,15 @@ RSpec.describe "the area show page", type: :feature do
       expect(page).to have_content("Go To Climbs Index")
       click_on "Go To Climbs Index"
       expect(current_path).to eq("/climbs")
+    end
+
+    # user story 9
+
+    it 'links to the areas index page' do
+      visit "/areas/#{@canal_zone.id}"
+      expect(page).to have_content("Go To Areas Index")
+      click_on "Go To Areas Index"
+      expect(current_path).to eq("/areas")
     end
 
   end
