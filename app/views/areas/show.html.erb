@@ -1,5 +1,5 @@
 <h2> <%= @area.name %> </h2>
-
+<%= link_to "#{@area.name} Climbs", "/areas/#{@area.id}/climbs" %>
 <p> Area ID Numbah: <%= @area.id %></p>
 <p> <%= @area.town %></p>
 <p> Camping: <%= @area.camping %></p>
