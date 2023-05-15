@@ -13,7 +13,6 @@ RSpec.describe "/climbs", type: :feature do
     @deuces_wild = Climb.create!(name: "Deuces Wild", grade: "5.10a", trad: false, sport: true, number_bolts: 7, area_id: @high_wire.id)
     @peoples_choice = Climb.create!(name: "People's Choice", grade: "5.10d", trad: false, sport: true, number_bolts: 20, area_id: @high_wire.id)
 
-
     @cactus_cliff = Area.create!(name: "Cactus Cliff", town: "Canyon City, CO", camping: true, trad: true, sport: true, parking_spaces: 0)
     @the_stand = Climb.create!(name: "The Stand", grade: "5.10b/c", trad: false, sport: true, number_bolts: 7, area_id: @cactus_cliff.id)
 
