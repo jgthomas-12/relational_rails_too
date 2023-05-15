@@ -66,7 +66,6 @@ RSpec.describe "the area show page", type: :feature do
       expect(page).to have_content("Go To Climbs Index")
       click_on "Go To Climbs Index"
       expect(current_path).to eq("/climbs")
-      save_and_open_page # this opens the page linked to
 
       visit "/areas/#{@canal_zone.id}"
       expect(page).to have_content("Go To Climbs Index")
@@ -77,10 +76,32 @@ RSpec.describe "the area show page", type: :feature do
     # user story 9
 
     it 'links to the areas index page' do
+      visit "/areas/#{@high_wire.id}"
+      expect(page).to have_content("Go To Areas Index")
+      click_on "Go To Areas Index"
+      expect(current_path).to eq("/areas")
+
       visit "/areas/#{@canal_zone.id}"
       expect(page).to have_content("Go To Areas Index")
       click_on "Go To Areas Index"
       expect(current_path).to eq("/areas")
+    end
+
+    # User Story 10, Parent Child Index Link
+
+    # As a visitor
+    # When I visit a parent show page ('/parents/:id')
+    # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
+    it 'links to the climbs of the area' do
+      visit "/areas/#{@canal_zone.id}"
+      expect(page).to have_content("#{@canal_zone.name} Climbs")
+      click_on "#{@canal_zone.name} Climbs"
+      expect(current_path).to eq("/areas/#{@canal_zone.id}/climbs")
+
+      visit "/areas/#{@high_wire.id}"
+      expect(page).to have_content("#{@high_wire.name} Climbs")
+      click_on "#{@high_wire.name} Climbs"
+      expect(current_path).to eq("/areas/#{@high_wire.id}/climbs")
     end
 
   end
