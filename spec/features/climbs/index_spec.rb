@@ -45,8 +45,16 @@ RSpec.describe "/climbs", type: :feature do
       expect(page).to have_content("Number of Bolts: #{@the_stand.number_bolts}")
       expect(page).to have_content("Area ID: #{@the_stand.area_id}")
     end
-  end
 
+    # user story 9
+
+    it 'links to the areas index page' do
+      visit "/climbs"
+      expect(page).to have_content("Go To Areas Index")
+      click_on "Go To Areas Index"
+      expect(current_path).to eq("/areas")
+    end
+  end
 
 
 
