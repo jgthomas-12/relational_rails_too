@@ -58,12 +58,32 @@ RSpec.describe "the areas climbs index", type: :feature do
   # OR it "displays all climb names" - 3 routes.name, it "displays climb grades" - 3 climb.grades
   # it "links to each climbs show page" from video
 
+  # user story 8
+
   it 'links back to climbs index page' do
     visit "/areas/#{@canal_zone.id}/climbs"
-    expect(page).to have_content("Back To Climbs Index")
-    click_on "Back To Climbs Index"
+    expect(page).to have_content("Go To Climbs Index")
+    click_on "Go To Climbs Index"
+    expect(current_path).to eq("/climbs")
+
+    visit "/areas/#{@high_wire.id}/climbs"
+    expect(page).to have_content("Go To Climbs Index")
+    click_on "Go To Climbs Index"
     expect(current_path).to eq("/climbs")
   end
 
+  # user story 9
+
+  it 'links to the areas index page' do
+    visit "/areas/#{@canal_zone.id}/climbs"
+    expect(page).to have_content("Go To Areas Index")
+    click_on "Go To Areas Index"
+    expect(current_path).to eq("/areas")\
+
+    visit "/areas/#{@high_wire.id}/climbs"
+    expect(page).to have_content("Go To Areas Index")
+    click_on "Go To Areas Index"
+    expect(current_path).to eq("/areas")
+  end
 
 end

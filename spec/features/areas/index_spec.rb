@@ -50,6 +50,8 @@ RSpec.describe "/areas", type: :feature do
                             "#{@cactus_cliff.name} Created At: #{@cactus_cliff.created_at}"])
     end
 
+    # user story 8
+
     it 'links to climbs index page' do
       visit "/areas"
       expect(page).to have_content("Go To Climbs Index")
@@ -59,4 +61,4 @@ RSpec.describe "/areas", type: :feature do
   end
 end
 
-# This spec is testing whether everything displays correctly/ is it there? is it not there?
+# This spec is testing whether everything displays correctly/ is it there? is it not there? (Don't joke, you're not at that edgey point, fahkah, it's allll there)

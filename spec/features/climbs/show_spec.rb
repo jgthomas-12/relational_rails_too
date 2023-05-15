@@ -41,37 +41,34 @@ RSpec.describe "the climbs show page", type: :feature do
       expect(page).to have_content("Area ID Number: #{@peoples_choice.area_id}") # name?
     end
 
+    # user story 8
+
     it 'links to climbs index page no mattah the cloimb' do
       visit "/climbs/#{@peoples_choice.id}"
-      expect(page).to have_content("Back To Climbs Index")
-      click_on "Back To Climbs Index"
+      expect(page).to have_content("Go To Climbs Index")
+      click_on "Go To Climbs Index"
       expect(current_path).to eq("/climbs")
 
       visit "/climbs/#{@deuces_wild.id}"
-      expect(page).to have_content("Back To Climbs Index")
-      click_on "Back To Climbs Index"
+      expect(page).to have_content("Go To Climbs Index")
+      click_on "Go To Climbs Index"
       expect(current_path).to eq("/climbs")
     end
 
-    # it 'displays the climb grade' do
+    # user story 9
 
-    # end
+    it 'links to the areas index page' do
+      visit "/climbs/#{@peoples_choice.id}"
+      expect(page).to have_content("Go To Areas Index")
+      click_on "Go To Areas Index"
+      expect(current_path).to eq("/areas")
 
-    # it 'shows if it is a trad route' do
+      visit "/climbs/#{@deuces_wild.id}"
+      expect(page).to have_content("Go To Areas Index")
+      click_on "Go To Areas Index"
+      expect(current_path).to eq("/areas")
+    end
 
-    # end
-
-    # it 'shows if it is a sport route' do
-
-    # end
-
-    # it 'shows how many bolts it has' do
-
-    # end
-
-    # it 'shows the area id number' do
-
-    # end
 
   end
 
