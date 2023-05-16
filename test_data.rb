@@ -34,6 +34,21 @@
 
   # it "displays the created_at time next to each record"
 
+   # actual = page.all('p').map do |area_name|
+      #   area_name.text
+      # end
+      # expect(actual).to eq(["#{@canal_zone.name} Created At: #{@canal_zone.created_at}",
+      #                       "#{@high_wire.name} Created At: #{@high_wire.created_at}",
+      #                       "#{@cactus_cliff.name} Created At: #{@cactus_cliff.created_at}"])
+
+
+      # visit "/areas"
+      # actual = page.all('p').map do |area_name|
+      #   area_name.text
+      # end
+      # expect(actual).to eq(["#{@high_wire.name} Created At: #{@high_wire.created_at}",
+      #                       "#{@canal_zone.name} Created At: #{@canal_zone.created_at}",
+      #                       "#{@cactus_cliff.name} Created At: #{@cactus_cliff.created_at}"])
 
 # end
 

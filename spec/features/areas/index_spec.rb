@@ -29,34 +29,33 @@ RSpec.describe "/areas", type: :feature do
     # And next to each of the records I see when it was created
 
     it "orders the area names by most recently created (first)" do
-      visit "/areas"
-      actual = page.all('p').map do |area_name|
-        area_name.text
-      end
-      expect(actual).to eq(["#{@canal_zone.name} Created At: #{@canal_zone.created_at}",
-                            "#{@high_wire.name} Created At: #{@high_wire.created_at}",
-                            "#{@cactus_cliff.name} Created At: #{@cactus_cliff.created_at}"])
-
-      @canal_zone.update(created_at: 17.days.ago)
-      @high_wire.update(created_at: 65.days.ago)
-      @cactus_cliff.update(created_at: 2.days.ago)
 
       visit "/areas"
-      actual = page.all('p').map do |area_name|
-        area_name.text
-      end
-      expect(actual).to eq(["#{@high_wire.name} Created At: #{@high_wire.created_at}",
-                            "#{@canal_zone.name} Created At: #{@canal_zone.created_at}",
-                            "#{@cactus_cliff.name} Created At: #{@cactus_cliff.created_at}"])
+
+      expect(@cactus_cliff.name).to appear_before(@high_wire.name)
+      expect(@high_wire.name).to appear_before(@canal_zone.name)
+
+      @canal_zone.update(created_at: 65.days.ago)
+      @cactus_cliff.update(created_at: 16.days.ago)
+      @high_wire.update(created_at: 1.days.ago)
+
+      visit "/areas"
+
+      expect(@high_wire.name).to appear_before(@cactus_cliff.name)
+      expect(@cactus_cliff.name).to appear_before(@canal_zone.name)
+
     end
 
     # user story 8
 
     it 'links to climbs index page' do
       visit "/areas"
+      save_and_open_page
       expect(page).to have_content("Go To Climbs Index")
       click_on "Go To Climbs Index"
       expect(current_path).to eq("/climbs")
+      save_and_open_page
+
     end
   end
 end
