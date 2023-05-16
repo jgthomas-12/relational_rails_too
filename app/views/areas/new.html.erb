@@ -1,0 +1,8 @@
+<%= form_with url: "/areas", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%#= add the rest of the attributes like name in tandem %>
+  <%#= for boolean, do checkbox so form.checkbox :trad %>
+  <%= form.submit "Create Area" %>
+<% end %>
+

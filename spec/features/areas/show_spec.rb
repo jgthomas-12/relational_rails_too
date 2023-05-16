@@ -32,7 +32,7 @@ RSpec.describe "the area show page", type: :feature do
       expect(page).to have_content("Parking Spaces: #{@canal_zone.parking_spaces}")
     end
 
-    it "displays the area name, area id and attributes for Canal Zone" do
+    it "displays the area name, area id and attributes for High Wire" do
       visit "/areas/#{@high_wire.id}"
       # localhost:3000/areas/1
       expect(page).to have_content(@high_wire.name)
@@ -51,7 +51,7 @@ RSpec.describe "the area show page", type: :feature do
     # I see a count of the number of children associated with this parent
     # Usability
 
-    it 'displays a count of the number of children associated with the parent' do
+    it "displays a count of the number of children associated with the parent" do
       visit "/areas/#{@high_wire.id}"
       expect(page).to have_content("Number of Climbs: #{@high_wire.climbs.count}")
 
@@ -61,7 +61,7 @@ RSpec.describe "the area show page", type: :feature do
 
     # user story 8: the legend of climbs index links
 
-    it 'links to climbs index from any show page' do
+    it "links to climbs index from any show page" do
       visit "/areas/#{@high_wire.id}"
       expect(page).to have_content("Go To Climbs Index")
       click_on "Go To Climbs Index"
@@ -75,7 +75,7 @@ RSpec.describe "the area show page", type: :feature do
 
     # user story 9
 
-    it 'links to the areas index page' do
+    it "links to the areas index page" do
       visit "/areas/#{@high_wire.id}"
       expect(page).to have_content("Go To Areas Index")
       click_on "Go To Areas Index"
@@ -90,9 +90,9 @@ RSpec.describe "the area show page", type: :feature do
     # User Story 10, Parent Child Index Link
 
     # As a visitor
-    # When I visit a parent show page ('/parents/:id')
-    # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
-    it 'links to the climbs of the area' do
+    # When I visit a parent show page ("/parents/:id")
+    # Then I see a link to take me to that parent"s `child_table_name` page ("/parents/:id/child_table_name")
+    it "links to the climbs of the area" do
       visit "/areas/#{@canal_zone.id}"
       expect(page).to have_content("#{@canal_zone.name} Climbs")
       click_on "#{@canal_zone.name} Climbs"
@@ -104,18 +104,7 @@ RSpec.describe "the area show page", type: :feature do
       expect(current_path).to eq("/areas/#{@high_wire.id}/climbs")
     end
 
-    # User Story 11, Parent Creation
 
-    # As a visitor
-    # When I visit the Parent Index page
-    # Then I see a link to create a new Parent record, "New Parent"
-    # When I click this link
-    # Then I am taken to '/parents/new' where I  see a form for a new parent record
-    # When I fill out the form with a new parent's attributes:
-    # And I click the button "Create Parent" to submit the form
-    # Then a `POST` request is sent to the '/parents' route,
-    # a new parent record is created,
-    # and I am redirected to the Parent Index page where I see the new Parent displayed.
 
   end
 end
