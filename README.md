@@ -90,6 +90,8 @@ When I visit the parent index,
 I see that records are ordered by most recently created first
 And next to each of the records I see when it was created
 
+*** NEEDS TO BE IN MODELS!? 
+
 [/areas/:area_id ] done
 
 User Story 7, Parent Child Count
@@ -107,25 +109,23 @@ As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Child Index
 
-[ ] done
+[All pages but Areas index ] done
 
 User Story 9, Parent Index Link
 
 As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Parent Index
-[ ] done
+Just areas/:id/show[ ] done
 
 User Story 10, Parent Child Index Link
 
 As a visitor
 When I visit a parent show page ('/parents/:id')
 Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
-Iteration 2
 CRUD
-[ ] done
 
-ITERRATION 2
+ITERATION 2
 
 User Story 11, Parent Creation
 
@@ -211,7 +211,6 @@ I should be taken to that parent's edit page where I can update its information 
 
 User Story 18, Child Update From Childs Index Page
 
-ITERATION 3
 
 As a visitor
 When I visit the `child_table_name` index page or a parent `child_table_name` index page
@@ -222,6 +221,7 @@ Iteration 3
 CRUD
 [ ] done
 
+ITERATION 3
 User Story 19, Parent Delete
 
 As a visitor
