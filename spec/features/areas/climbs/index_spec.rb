@@ -8,6 +8,7 @@ RSpec.describe "the areas climbs index", type: :feature do
   # Then I see each Child (climb) that is associated with that Parent (Area) with each Child's (Climb's) attributes
   # (data from each column that is on the child table)
   # ActiveRecord
+  
   before(:each) do
     @canal_zone = Area.create!(name: "Canal Zone", town: "Golden, CO", camping: false, trad: true, sport: true, parking_spaces: 70)
     @box_of_rain = Climb.create!(name: "Box of Rain", grade: "5.8", trad: false, sport: true, number_bolts: 8, area_id: @canal_zone.id)
@@ -85,5 +86,4 @@ RSpec.describe "the areas climbs index", type: :feature do
     click_on "Go To Areas Index"
     expect(current_path).to eq("/areas")
   end
-
 end

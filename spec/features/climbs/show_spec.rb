@@ -24,7 +24,7 @@ RSpec.describe "the climbs show page", type: :feature do
       expect(page).to have_content("Trad: #{@deuces_wild.trad}")
       expect(page).to have_content("Sport: #{@deuces_wild.sport}")
       expect(page).to have_content("Number of Bolts: #{@deuces_wild.number_bolts}")
-      expect(page).to have_content("Area ID Number: #{@deuces_wild.area_id}") # name?
+      expect(page).to have_content("Area ID Number: #{@deuces_wild.area_id}")
 
     end
 
@@ -38,7 +38,7 @@ RSpec.describe "the climbs show page", type: :feature do
       expect(page).to have_content("Trad: #{@peoples_choice.trad}")
       expect(page).to have_content("Sport: #{@peoples_choice.sport}")
       expect(page).to have_content("Number of Bolts: #{@peoples_choice.number_bolts}")
-      expect(page).to have_content("Area ID Number: #{@peoples_choice.area_id}") # name?
+      expect(page).to have_content("Area ID Number: #{@peoples_choice.area_id}")
     end
 
     # user story 8
@@ -68,11 +68,5 @@ RSpec.describe "the climbs show page", type: :feature do
       click_on "Go To Areas Index"
       expect(current_path).to eq("/areas")
     end
-
-
   end
-
-
-
-
 end

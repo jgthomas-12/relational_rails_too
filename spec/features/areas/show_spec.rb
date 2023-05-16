@@ -92,6 +92,7 @@ RSpec.describe "the area show page", type: :feature do
     # As a visitor
     # When I visit a parent show page ("/parents/:id")
     # Then I see a link to take me to that parent"s `child_table_name` page ("/parents/:id/child_table_name")
+    
     it "links to the climbs of the area" do
       visit "/areas/#{@canal_zone.id}"
       expect(page).to have_content("#{@canal_zone.name} Climbs")
@@ -103,8 +104,5 @@ RSpec.describe "the area show page", type: :feature do
       click_on "#{@high_wire.name} Climbs"
       expect(current_path).to eq("/areas/#{@high_wire.id}/climbs")
     end
-
-
-
   end
 end
