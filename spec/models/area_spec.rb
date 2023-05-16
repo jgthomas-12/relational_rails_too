@@ -18,13 +18,13 @@ RSpec.describe Area, type: :model do
       @cactus_cliff = Area.create!(name: "Cactus Cliff", town: "Canyon City, CO", camping: true, trad: true, sport: true, parking_spaces: 0)
 
     end
-    
+
     describe '#sort_by_created_at' do
       it 'sorts the areas index by most recently created'do
         @canal_zone.update(created_at: 17.days.ago)
         @high_wire.update(created_at: 65.days.ago)
         @cactus_cliff.update(created_at: 2.days.ago)
-        expect(Area.sort_by_created_at).to eq([@high_wire, @canal_zone, @cactus_cliff])
+        expect(Area.sort_by_created_at).to eq([@cactus_cliff, @canal_zone, @high_wire])
       end
     end
   end
