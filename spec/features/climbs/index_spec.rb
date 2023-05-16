@@ -17,9 +17,9 @@ RSpec.describe "/climbs", type: :feature do
     @the_stand = Climb.create!(name: "The Stand", grade: "5.10b/c", trad: false, sport: true, number_bolts: 7, area_id: @cactus_cliff.id)
 
   end
-  describe 'as a visitor, when I visit the climbs index page' do
+  describe "as a visitor, when I visit the climbs index page" do
 
-    it 'displays all the climbs attributes' do
+    it "displays all the climbs attributes" do
 
       visit "/climbs"
 
@@ -47,7 +47,7 @@ RSpec.describe "/climbs", type: :feature do
 
     # user story 9
 
-    it 'links to the areas index page' do
+    it "links to the areas index page" do
       visit "/climbs"
       expect(page).to have_content("Go To Areas Index")
       click_on "Go To Areas Index"

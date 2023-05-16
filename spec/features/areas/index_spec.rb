@@ -48,7 +48,7 @@ RSpec.describe "/areas", type: :feature do
 
     # user story 8
 
-    it 'links to climbs index page' do
+    it "links to climbs index page" do
       visit "/areas"
       save_and_open_page
       expect(page).to have_content("Go To Climbs Index")
@@ -57,6 +57,8 @@ RSpec.describe "/areas", type: :feature do
       save_and_open_page
 
     end
+
+
   end
 end
 

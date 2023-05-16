@@ -43,7 +43,7 @@ RSpec.describe "the climbs show page", type: :feature do
 
     # user story 8
 
-    it 'links to climbs index page no mattah the cloimb' do
+    it "links to climbs index page no mattah the cloimb" do
       visit "/climbs/#{@peoples_choice.id}"
       expect(page).to have_content("Go To Climbs Index")
       click_on "Go To Climbs Index"
@@ -57,7 +57,7 @@ RSpec.describe "the climbs show page", type: :feature do
 
     # user story 9
 
-    it 'links to the areas index page' do
+    it "links to the areas index page" do
       visit "/climbs/#{@peoples_choice.id}"
       expect(page).to have_content("Go To Areas Index")
       click_on "Go To Areas Index"

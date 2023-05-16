@@ -18,35 +18,35 @@ RSpec.describe "the areas climbs index", type: :feature do
     @peoples_choice = @high_wire.climbs.create!(name: "People's Choice", grade: "5.10d", trad: false, sport: true, number_bolts: 20)
   end
 
-  it 'displays each climb name associated with the area ' do
+  it "displays each climb name associated with the area " do
     visit "/areas/#{@canal_zone.id}/climbs"
     expect(page).to have_content(@box_of_rain.name)
     expect(page).to have_content(@ripple.name)
     expect(page).to have_content(@beasto.name)
   end
 
-  it 'displays each climb grade associated with the area ' do
+  it "displays each climb grade associated with the area " do
     visit "/areas/#{@canal_zone.id}/climbs"
     expect(page).to have_content("Grade: #{@box_of_rain.grade}")
     expect(page).to have_content("Grade: #{@ripple.grade}")
     expect(page).to have_content("Grade: #{@beasto.grade}")
   end
 
-  it 'displays if the route is a trad route' do
+  it "displays if the route is a trad route" do
     visit "/areas/#{@canal_zone.id}/climbs"
     expect(page).to have_content("Trad: #{@box_of_rain.trad}")
     expect(page).to have_content("Trad: #{@ripple.trad}")
     expect(page).to have_content("Trad: #{@beasto.trad}")
   end
 
-  it 'displays if the route is a sport route' do
+  it "displays if the route is a sport route" do
     visit "/areas/#{@canal_zone.id}/climbs"
     expect(page).to have_content("Sport: #{@box_of_rain.sport}")
     expect(page).to have_content("Sport: #{@ripple.sport}")
     expect(page).to have_content("Sport: #{@beasto.sport}")
   end
 
-  it 'displays how many bolts the route has' do
+  it "displays how many bolts the route has" do
     visit "/areas/#{@canal_zone.id}/climbs"
     expect(page).to have_content("Number of Bolts: #{@box_of_rain.number_bolts}")
     expect(page).to have_content("Number of Bolts: #{@ripple.number_bolts}")
@@ -60,7 +60,7 @@ RSpec.describe "the areas climbs index", type: :feature do
 
   # user story 8
 
-  it 'links back to climbs index page' do
+  it "links back to climbs index page" do
     visit "/areas/#{@canal_zone.id}/climbs"
     expect(page).to have_content("Go To Climbs Index")
     click_on "Go To Climbs Index"
@@ -74,11 +74,11 @@ RSpec.describe "the areas climbs index", type: :feature do
 
   # user story 9
 
-  it 'links to the areas index page' do
+  it "links to the areas index page" do
     visit "/areas/#{@canal_zone.id}/climbs"
     expect(page).to have_content("Go To Areas Index")
     click_on "Go To Areas Index"
-    expect(current_path).to eq("/areas")\
+    expect(current_path).to eq("/areas")
 
     visit "/areas/#{@high_wire.id}/climbs"
     expect(page).to have_content("Go To Areas Index")
