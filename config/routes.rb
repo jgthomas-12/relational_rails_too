@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/areas", to: "areas#index"
   get "/climbs", to: "climbs#index"
+  get "/areas/new", to: "areas#new"
+  post "/areas", to: "areas#create"
   get "/areas/:id", to: "areas#show"
   get "/climbs/:id", to: "climbs#show"
-  get "/areas/:area_id/climbs", to: "areas/climbs#index"
+  get "/areas/:id/climbs", to: "areas/climbs#index"
 end
