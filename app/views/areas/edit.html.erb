@@ -1,0 +1,6 @@
+<%= form_with url: "/areas/#{@area.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+
+  <%= form.submit "Update Area" %>
+<% end %>

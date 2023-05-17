@@ -1,8 +1,10 @@
 <h1>Best Freakin Climbing Areas According to Jesse: A Very Average Climber</h1>
+<%= link_to "New Area", "/areas/new" %>
 <% @areas.each do |area| %>
-  <p><%= area.name %> Created At: <%= area.created_at %></p>
+  <p><h4><%= area.name %></h4> Created At: <%= area.created_at %></p>
+  <%= link_to "Edit", "/areas/#{area.id}/edit" %>
 <% end %>
 
-<%= link_to "New Area", "/areas/new" %>
+
 
 
