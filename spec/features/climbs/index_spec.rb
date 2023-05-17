@@ -54,9 +54,4 @@ RSpec.describe "/climbs", type: :feature do
       expect(current_path).to eq("/areas")
     end
   end
-
-
-
-
-
 end

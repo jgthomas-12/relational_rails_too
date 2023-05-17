@@ -10,6 +10,7 @@
     # Then a `POST` request is sent to the '/parents' route,
     # a new parent record is created,
     # and I am redirected to the Parent Index page where I see the new Parent displayed.
+
 require "rails_helper"
 
 RSpec.describe "New Area" do
@@ -22,11 +23,18 @@ RSpec.describe "New Area" do
 
         expect(current_path).to eq("/areas/new")
 
-        fill_in "Name", with: "Little Eiger" #add other attributes
+        fill_in "Name", with: "Little Eiger"
+        fill_in "Town", with: "Golden, CO"
+        uncheck "Camping"
+        check "Trad"
+        check "Sport"
+        fill_in "Parking Spaces", with: 15
+
         click_on "Create Area"
 
         expect(current_path).to eq("/areas")
         expect(page).to have_content("Little Eiger")
+        #could access show page with "/areas/#{Area.all.first.id}/show"?
       end
     end
   end

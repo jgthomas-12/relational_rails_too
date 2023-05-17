@@ -1,8 +1,23 @@
+<h3> Add New Area </h3>
 <%= form_with url: "/areas", method: :post, local: true do |form| %>
   <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%#= add the rest of the attributes like name in tandem %>
-  <%#= for boolean, do checkbox so form.checkbox :trad %>
+  <%= form.text_field :name %><br>
+
+  <%= form.label :town %>
+  <%= form.text_field :town %><br>
+
+  <%= form.label :camping %>
+  <%= form.check_box :camping %><br>
+
+  <%= form.label :trad %>
+  <%= form.check_box :trad %><br>
+
+  <%= form.label :sport %>
+  <%= form.check_box :sport %><br>
+
+  <%= form.label :parking, "Parking Spaces" %>
+  <%= form.number_field :parking, in: 1..400 %><br>
+
   <%= form.submit "Create Area" %>
 <% end %>
 

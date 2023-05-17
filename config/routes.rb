@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get "/areas/:id", to: "areas#show"
   get "/climbs/:id", to: "climbs#show"
   get "/areas/:id/climbs", to: "areas/climbs#index"
+
+  get "/areas/:id/edit", to: "areas#edit"
+  patch "/areas/:id", to: "areas#update"
 end

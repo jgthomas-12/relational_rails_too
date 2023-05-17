@@ -43,23 +43,15 @@ RSpec.describe "/areas", type: :feature do
 
       expect(@high_wire.name).to appear_before(@cactus_cliff.name)
       expect(@cactus_cliff.name).to appear_before(@canal_zone.name)
-
     end
 
     # user story 8
 
     it "links to climbs index page" do
       visit "/areas"
-      save_and_open_page
       expect(page).to have_content("Go To Climbs Index")
       click_on "Go To Climbs Index"
       expect(current_path).to eq("/climbs")
-      save_and_open_page
-
     end
-
-
   end
 end
-
-# This spec is testing whether everything displays correctly/ is it there? is it not there? (Don't joke, you're not at that edgey point, fahkah, it's allll there)
